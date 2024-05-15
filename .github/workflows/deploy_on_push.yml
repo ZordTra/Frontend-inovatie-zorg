@@ -32,7 +32,7 @@ jobs:
       - name: run deploy
         run: |
           npm install
-          npm run deploy
+          gh-pages -d build --no-push
       - name: push gh-pages
         run: |
           git push
