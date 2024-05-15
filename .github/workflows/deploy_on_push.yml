@@ -43,6 +43,7 @@ jobs:
           git branch gh-pages
           git checkout gh-pages
           mv /tmp/repo-build/* .
+          ls -la
           git add *
           git commit -am automatic_gh_pages_deploy
           git push
