@@ -39,6 +39,7 @@ jobs:
       - name: push gh-pages
         run: |
           ls -la build
+          git add ./build
           git branch gh-pages
           git checkout gh-pages
           git checkout master build
