@@ -36,14 +36,16 @@ jobs:
 
           npm run build
           npm run _run_ghpages
-      - name: push gh-pages
+      - name: cp build to gh-pages
         run: |
           ls -la build
           mv build /tmp/repo-build
-          git branch gh-pages
+          git branch gh-pages --orphan
           git checkout gh-pages
           mv /tmp/repo-build/* .
           ls -la
           git add *
           git commit -am automatic_gh_pages_deploy
+      - name: push gh-pages
+        run: |
           git push
