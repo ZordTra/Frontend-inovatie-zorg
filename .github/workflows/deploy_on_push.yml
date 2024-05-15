@@ -35,4 +35,4 @@ jobs:
           npm run deploy
       - name: push gh-pages
         run: |
-          git push -b gh-pages
+          git push
