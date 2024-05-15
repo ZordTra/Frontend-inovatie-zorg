@@ -39,6 +39,9 @@ jobs:
       - name: push gh-pages
         run: |
           ls -la build
+          git branch gh-pages
           git checkout gh-pages
-          ls -la
+          git checkout master build
+          mv build/* .
+          git commit -am automatic_gh_pages_deploy
           git push
