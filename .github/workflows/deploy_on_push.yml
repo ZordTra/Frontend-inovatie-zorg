@@ -33,9 +33,11 @@ jobs:
         run: |
           npm install
           npm install gh-pages --save-dev
-          npm run _run_ghpages
+
           ls -la
           pwd
+
+          npm run _run_ghpages
       - name: push gh-pages
         run: |
           git push
