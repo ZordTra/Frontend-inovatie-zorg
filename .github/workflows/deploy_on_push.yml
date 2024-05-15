@@ -29,11 +29,11 @@ jobs:
         run: |
           git config --global user.name 'Auto'
           git config --global user.email 'auto@example.com'
-      - name: run deploy
+      - name: generate gh-pages
         run: |
           npm install
           npm install gh-pages --save-dev
-          gh-pages -d build --no-push
+          npm run _run_ghpages
       - name: push gh-pages
         run: |
           git push
