@@ -40,8 +40,9 @@ jobs:
         run: |
           ls -la build
           mv build /tmp/repo-build
-          git branch gh-pages --orphan
+          git branch gh-pages 
           git checkout gh-pages
+          rm -rf .
           mv /tmp/repo-build/* .
           ls -la
           git add *
