@@ -38,4 +38,6 @@ jobs:
           npm run _run_ghpages
       - name: push gh-pages
         run: |
+          git checkout gh-pages
+          ls -la
           git push
