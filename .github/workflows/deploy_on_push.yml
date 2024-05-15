@@ -50,5 +50,5 @@ jobs:
           git commit -am automatic_gh_pages_deploy
       - name: push gh-pages
         run: |
-          git push --set-upstream origin gh-pages
+          git push --set-upstream origin gh-pages --force
           git push --force
