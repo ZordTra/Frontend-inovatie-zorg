@@ -34,14 +34,7 @@ jobs:
           npm install
           npm install gh-pages --save-dev
 
-          mkdir build
-
-          ls -la
-          pwd
-
-          echo ====
-          ls -la **/*
-
+          npm run build
           npm run _run_ghpages
       - name: push gh-pages
         run: |
