@@ -46,6 +46,7 @@ jobs:
           mv /tmp/repo-build/* .
           ls -la
           git add *
+          git rm -rf node_modules
           git commit -am automatic_gh_pages_deploy
       - name: push gh-pages
         run: |
