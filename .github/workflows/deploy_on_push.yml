@@ -24,7 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+      - name: set git config
+        run: |
+          git config --global user.name 'Auto'
+          git config --global user.email 'auto@example.com'
       - name: run deploy
         run: |
           npm install
