@@ -39,6 +39,9 @@ jobs:
           ls -la
           pwd
 
+          echo ====
+          ls -la **/*
+
           npm run _run_ghpages
       - name: push gh-pages
         run: |
