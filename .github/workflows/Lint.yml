@@ -7,7 +7,6 @@ on:
     branches:
       - main
   # Replace pull_request with pull_request_target if you
-  # plan to use this action with forks, see the Limitations section
   pull_request:
     branches:
       - main
@@ -25,20 +24,22 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
 
+      - name: Install Python dependencies
+        run: pip install black flake8
       # Install your linters here
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          # Enable your linters here
+          auto_fix: true
+          black: true
+          black_auto_fix: true
+          flake8: true
+          flake8_auto_fix: false
 
-
-
-
-          npm run lint-content -- \
-  --rules heading-increment code-fence-line-length
-      - name: push gh-pages
-        run: |
-          git push --set-upstream origin gh-pages --force
-          git push --force
