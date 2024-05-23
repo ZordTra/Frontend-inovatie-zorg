@@ -13,6 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "Linting": "eslint back/*.js && eslint backTest/*.js && eslint front/actions/*.js",
     "_run_ghpages": "gh-pages -d build --no-push",
     "predeploy": "npm run build",
     "start": "react-scripts start",
